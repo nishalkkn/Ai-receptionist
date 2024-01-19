@@ -1,0 +1,31 @@
+{% extends 'temp/admn_hme.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<table border="1" align="center" class="table table-striped table-bordered">
+		<tr>
+            <th>dept_id</th>
+			<th>Departement</th>
+            <th></th>
+
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td>{{ i.dept_id}}</td>
+			<td>{{ i.dept_name }}</td>
+			<th><a href="/department/ remove/{{ i.dept_id }}">remove</a></th>
+		</tr>
+        {% endfor %}
+    </table>
+<button class="btn btn-outline-secondary"><a href="/temp/admin/">GO back</a> </button>
+<button class="btn btn-outline-primary"><a href="/department/depart//">Add departement</a> </button>
+
+</center>
+</body>
+</html>
+{% endblock %}

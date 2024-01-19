@@ -1,0 +1,38 @@
+{% extends 'temp/admn_hme.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h2>Department</h2>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>Departement</td>
+					<td><SELECT name="ln" required>
+                        <option disabled selected>SELECT</option>
+					<option value="GYNACOLOGIST">GYNACOLOGIST</option>
+					<option value="SKIN">SKIN</option>
+					<option value="PEDIATRICIAN">PEDIATRICIAN</option>
+					<option value="DENTIST">DENTIST</option>
+					<option value="SURGNE">SURGNE</option>
+					<option value="NEUROLOGIST">NEUROLOGIST</option>
+					<option value="CARDIOLOGIST">CARDIOLOGIST</option>
+					<option value="ENT">ENT</option>
+				</select></td>
+				</tr>
+			</table>
+        <br>
+        <button class="btn btn-outline-secondary"><a href="/temp/admin/">GO back</a> </button>
+        <button class="btn btn-primary">Submit</button>
+                    </form>
+
+    </center>
+
+</body>
+</html>
+{% endblock %}

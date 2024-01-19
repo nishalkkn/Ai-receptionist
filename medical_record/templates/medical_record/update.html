@@ -1,0 +1,28 @@
+{% extends 'temp/dr_hme.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h2>Medical-Records</h2>
+		<form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+			<table>
+			<tr>
+                <td>Update :</td>
+				<td><input type="file" name="report" required></td>
+			</tr>
+			</table>
+    <button class="btn btn-outline-primary"><a href="/temp/doctor/">Go back</a> </button>
+    <button class="btn btn-primary">Submit </button>
+
+        </form>
+
+    </center>
+
+</body>
+</html>
+{% endblock %}

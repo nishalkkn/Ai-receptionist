@@ -1,0 +1,30 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<h2>complaint</h2>
+	<div class="container mt-4">
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>
+                        <textarea class="form-control" id="complaint" rows="5" cols="50" name="complaint" required></textarea>
+                    </td>
+                </tr>
+            </table>
+
+    </div>
+<button class="btn btn-outline-primary"><a href="/temp/user/">Go back</a> </button>
+{#                <button class="btn btn-primary" >Post</button>#}
+    <input type="submit" value="Post" class="btn btn-outline-primary">
+    </form>
+</center>
+</body>
+</html>
+{% endblock %}

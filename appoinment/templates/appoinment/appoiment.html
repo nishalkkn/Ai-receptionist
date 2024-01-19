@@ -1,0 +1,50 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<center>
+		<h2>Appoiment</h2>
+		<form method="post">
+            {% csrf_token %}
+			<table>
+				<tr>
+					<td>Doctor Name :</td>
+					<td><select name="dnm">
+					<option  disabled selected >----SELECT----</option>
+                        {% for i in x %}
+                        <option value="{{ i.doct_id }}">{{ i.doct_name }}</option>
+                        {% endfor %}
+				</select></td>
+				</tr>
+            <tr>
+					<td>Patient name :</td>
+					<td><select name="pname">
+					<option  disabled selected >----SELECT----</option>
+                        {% for i in y %}
+                        <option value="{{ i.patient_id }}">{{ i.name }}</option>
+                        {% endfor %}
+				</select></td>
+				</tr>
+			<tr>
+				<td>Date :</td>
+				<td><input type="date" name="ps" class="text text-decoration-line-through"  required></td>
+			</tr>
+			<tr>
+				<td>time :</td>
+				<td><input type="time" name="pd"></td>
+			</tr>
+			</table>
+    <br>
+    <button class="btn btn-outline-primary"><a href="/temp/user/">Go back</a> </button>
+				<button class="btn btn-primary">Submit</button>
+                </form>
+
+    </center>
+
+</body>
+</html>
+{% endblock %}

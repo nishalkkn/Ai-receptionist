@@ -1,0 +1,24 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+		<table border="1" align="center" class="table table-striped table-bordered">
+		<tr>
+			<th>Departements </th>
+		</tr>
+            {% for i in x %}
+		<tr>
+			<td>{{ i.dept_name }}</td>
+		</tr>
+            {% endfor %}
+        </table>
+<button class="btn btn-outline-primary"><a href="/temp/user/">Go back</a> </button>
+</center>
+</body>
+</html>
+{% endblock %}

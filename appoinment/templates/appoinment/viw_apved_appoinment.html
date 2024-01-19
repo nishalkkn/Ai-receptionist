@@ -1,0 +1,40 @@
+{% extends 'temp/user_home.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+<center>
+	<table border="1" align="center" class="table table-striped table-bordered">
+		<tr>
+			<th>Patient name</th>
+            <th>Doctor name</th>
+			<th>department</th>
+			<th>Date</th>
+			<th>time</th>
+			<th>Status</th>
+	
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td>{{ i.patient.name }}</td>
+			<td>{{ i.doc.doct_name }}</td>
+            <td>{{ i.doc.dept.dept_name }}</td>
+			<td>{{i.date  }}</td>
+			<td>{{ i.time }}</td>
+			<td>{{ i.status }}</td>
+			
+		</tr>
+        {% endfor %}
+    </table>
+<button class="btn btn-outline-primary"><a href="/temp/user/">Go back</a> </button>
+
+
+</center>
+</body>
+</html>
+{% endblock %}

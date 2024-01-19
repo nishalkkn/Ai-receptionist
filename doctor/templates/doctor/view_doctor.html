@@ -1,0 +1,42 @@
+{% extends 'temp/admn_hme.html' %}
+{% block base %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+<h2>Doctors</h2>
+
+	<table border="1" align="center" class="table table-striped table-bordered">
+		<tr>
+            <th>doc_id</th>
+			<th>Name</th>
+			<th>Department</th>
+			<th>Place</th>
+			<th>Phone NO</th>
+			<th>E-mail</th>
+			<th>Experience</th>
+			<th>Qualification</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+           <td>{{ i.doct_id }}</td>
+			<td>{{ i.doct_name }}</td>
+			<td>{{ i.dept_id }}</td>
+			<td>{{ i.address }}</td>
+			<td>{{ i.phone_no }}</td>
+			<td>{{ i.email }}</td>
+			<td>{{ i.experience }}</td>
+			<td>{{ i.qualification }}</td>
+		</tr>
+        {% endfor %}
+
+
+</table>
+<button class="btn btn-outline-primary"><a href="/temp/admin/">Go back</a> </button>
+</center>
+</body>
+</html>
+{% endblock %}

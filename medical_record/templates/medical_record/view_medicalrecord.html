@@ -1,0 +1,33 @@
+{% extends 'temp/dr_hme.html' %}
+{% block base %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<center>
+	<table border="5" align="center" class="table table-striped table-bordered">
+		<tr>
+			<th>Appoinment id</th>
+            <th>Patient name</th>
+			<th>Medical_record</th>
+		</tr>
+        {% for i in x %}
+		<tr>
+			<td>{{ i.appo.appot_id }}</td>
+            <td>{{ i.appo.patient.name }}</td>
+			<td><a href="/static/{{ i.med_recd }}"> <img src="/static/{{ i.med_recd }}" width="50px" height="50px"></a></td>
+            <th><button class="btn btn-outline-primary"><a href="/medical_record/update/{{i.record_id}}">update</a></button></th>
+		</tr>
+        {% endfor %}
+    </table>
+<button class="btn btn-outline-primary"><a href="/temp/doctor/">Go back</a> </button>
+
+</center>
+
+
+</body>
+</html>
+{% endblock %}
